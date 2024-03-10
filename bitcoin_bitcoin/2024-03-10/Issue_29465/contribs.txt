@@ -1,0 +1,8 @@
+Issue_Update at 2024-03-10 13:34:18+00:00:
+Issue updated at 2024-03-10 13:34:18+00:00
+Notes:
+- Commented:  Silent payments (BIP352)
+Prune node rescan
+Legacy wallet removal
+- Commented:  I'm ok with dropping my vote for Silent Payments.
+
