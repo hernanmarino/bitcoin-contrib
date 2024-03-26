@@ -1,0 +1,9 @@
+PR_Update at 2024-03-26 12:40:13+00:00:
+PR updated at 2024-03-26 12:40:13+00:00
+Notes:
+- Commented:  > There is this library which is maintained and available in multiple programming languages (C and C++ are two of them): https://github.com/nayuki/QR-Code-generator
+
+I can take a look and attempt migrating to it, unless you e want to work on it yourself, @prusnak 
+- Review (APPROVED) at 2023-03-26 23:16:43+00:00:
+  tested ACK, both compiling and QR generation . 
+
