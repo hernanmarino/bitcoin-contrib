@@ -1,0 +1,18 @@
+PR_Update at 2024-04-01 08:22:27+00:00:
+PR updated at 2024-04-01 08:22:27+00:00
+Notes:
+- Review (COMMENTED) at 2023-03-01 15:06:54+00:00:
+  Tested ACK d41037bfb154befad433e9c1a3d497dea9c7cb0c . I like the approach of hiding the Transaction table completely, I see no point in showing an empty table .
+- Review (COMMENTED) at 2023-03-02 15:19:33+00:00:
+  After more thorough testing I found the following issue, I think this pre-opened windows should be hidden or closed. 
+
+
+![video](https://user-images.githubusercontent.com/87907936/222470422-344007d6-a718-488e-8bdd-0ca4222d2a89.gif)
+
+
+- Review (APPROVED) at 2023-03-06 18:26:26+00:00:
+  Tested ACK 5fb3face477c30f576e14541550fcf64b17a94d6
+
+- Review (APPROVED) at 2023-03-13 17:02:08+00:00:
+  ACK 4492de1be11f4131811f504a037342c78f480e20
+
