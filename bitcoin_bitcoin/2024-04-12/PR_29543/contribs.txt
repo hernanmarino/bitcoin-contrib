@@ -1,0 +1,4 @@
+PR_Comment at 2024-04-12 22:31:24+00:00:
+Commented at 2024-04-12 22:31:24+00:00:
+ACK to the idea of removing overflows in the code, but I was little worried of the implications of this. After reading @sipa 's comment, it is definitely an ACK for me. Regarding the approach between this PR and https://github.com/bitcoin/bitcoin/pull/24214 , I am leaning towards this for the sole reason that 24214 is still closed, but i reviewed and also ACK that PR as well.
+
