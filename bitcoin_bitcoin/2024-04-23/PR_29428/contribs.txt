@@ -4,3 +4,7 @@ Commented at 2024-04-23 17:25:41+00:00:
 
 I haven´t been able to think of / work on other tests to add, but the current commit test is ready for review, so i am taking the PR out of Draft status.
 
+PR_Comment at 2024-04-23 19:44:32+00:00:
+Commented at 2024-04-23 19:44:32+00:00:
+Updated to remove a (no lonnger valid) TODO comment as requested in https://github.com/bitcoin/bitcoin/pull/29428#issuecomment-1952480346. Also updated the PR title and description.
+
