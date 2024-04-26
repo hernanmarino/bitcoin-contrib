@@ -2,3 +2,6 @@ PR_Commit at 2024-04-26 18:38:46+00:00:
 Commit (f6deb71a135a92d1e229ea96f8b576a83054158d) at 2024-04-26 18:38:46+00:00:
 Add support for BIP39 passphrases
 
+PR_Merge at 2024-04-26 19:47:43+00:00:
+PR merged at 2024-04-26 19:47:43+00:00 by hernanmarino
+
