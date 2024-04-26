@@ -2,3 +2,7 @@ PR_Commit at 2024-04-26 18:02:00+00:00:
 Commit (1f69d72a171e4e83efd47671b2838517670ad01d) at 2024-04-26 18:02:00+00:00:
 Change connection protocol for connectrum dep to https
 
+PR_Comment at 2024-04-26 19:53:26+00:00:
+Commented at 2024-04-26 19:53:26+00:00:
+This might fix issue https://github.com/esneider/indy/issues/3 if the user is using a different version of connectrum due to inability to install the one referenced in `requirements.txt`
+
