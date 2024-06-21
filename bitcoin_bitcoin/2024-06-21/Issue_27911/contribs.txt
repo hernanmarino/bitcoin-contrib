@@ -1,0 +1,5 @@
+Issue_Update at 2024-06-21 12:56:42+00:00:
+Issue updated at 2024-06-21 12:56:42+00:00
+Notes:
+- Commented:  Are you sure you are not trying to run the 64 bit version of Bitcoin Core on a 32 bit Windows 10 ? This might be one of the explanations for that error. In any case, it looks like a windows error. Did you try downloading the binaries instead of compiling to see if it's not a compiling issue ?
+
