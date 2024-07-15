@@ -1,0 +1,5 @@
+Issue_Update at 2024-07-15 12:59:45+00:00:
+Issue updated at 2024-07-15 12:59:45+00:00
+Notes:
+- Commented:  Hey @kallerosenbaum , you are welcome to take a look at this PR I 've just uploaded to address your issue: https://github.com/bitcoin-core/gui/pull/740 
+
