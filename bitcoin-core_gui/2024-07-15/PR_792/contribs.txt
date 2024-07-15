@@ -1,0 +1,12 @@
+PR_Update at 2024-07-15 15:42:23+00:00:
+PR updated at 2024-07-15 15:42:23+00:00
+Notes:
+- Commented:  As a first commit, I only took @ saibato's latest commit and corrected a couple of bugs (mentioned by @pablomartin4btc in the original PR.)
+Marked as Draft, in the following days I'll try to address all comments and sugestions in that PR, and mark it ready for review.
+
+- Commented:  > @hernanmarino
+> 
+> Are you still working on this?
+
+I am active, and I'll resume working on this PR and upload a proposal soon. 
+
