@@ -6,3 +6,24 @@ Commented at 2024-07-30 16:18:45+00:00:
 
 I like them. I can work on them and open a follow up PR soon.
 
+PR_Update at 2024-07-30 16:25:41+00:00:
+PR updated at 2024-07-30 16:25:41+00:00
+Notes:
+- Commented:  Updated the code as per @hebasto suggestions.
+- Commented:  After @hebasto 's comment I decided to update the code to explicitly call reject() when cancelling the first dialog. This introduces one less change from the original code, and also makes the intention more explicit to developers / reviewers.
+- Commented:  Rolled back to undo changes detected by @pablomartin4btc . Now changes are at commit 78660e72001a2561c7ad3026367a69f65414dbd9 , the last one ACK ed by @jarolrod and others.
+- Commented:  Rebased for CI, no actual code changes in my code.
+- Commented:  > @hernanmarino
+> 
+> Are you still working on this PR? If so, what do you think about GBKS's [suggestion](https://github.com/bitcoin-core/gui/pull/722#issuecomment-2124671596)?
+
+I like them. I can work on them and open a follow up PR soon.
+- Review (COMMENTED) at 2023-03-27 15:49:30+00:00:
+  
+- Review (COMMENTED) at 2023-03-28 14:14:42+00:00:
+  
+- Review (COMMENTED) at 2023-03-28 14:15:55+00:00:
+  
+- Review (COMMENTED) at 2023-06-17 01:39:35+00:00:
+  
+
