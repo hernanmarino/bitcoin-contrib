@@ -1,0 +1,8 @@
+PR_Comment at 2024-07-30 16:18:45+00:00:
+Commented at 2024-07-30 16:18:45+00:00:
+> @hernanmarino
+> 
+> Are you still working on this PR? If so, what do you think about GBKS's [suggestion](https://github.com/bitcoin-core/gui/pull/722#issuecomment-2124671596)?
+
+I like them. I can work on them and open a follow up PR soon.
+
