@@ -1,0 +1,11 @@
+PR_Update at 2024-08-13 11:20:25+00:00:
+PR updated at 2024-08-13 11:20:25+00:00
+Notes:
+- Commented:  I'm a little late but, in order to collaborate with this in the future what exactly should I be diffing ? between what branches/ files ? Thanks
+- Commented:  > @hernanmarino check this [guide](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md?rgh-link-date=2024-02-13T21%3A47%3A53Z) (there's an ongoing [small correction](https://github.com/bitcoin/bitcoin/pull/29414)) and see this [PR](https://github.com/bitcoin/bitcoin/pull/29397) was done on the core repo recently as an example.
+
+I read the guide (and your PR) and it doesn´t mention what branches/commits/files to diff
+
+I performed a diff on th PR branch after the make instructions and master and found several differences but I am obviously doing something wrong ...
+
+
