@@ -1,0 +1,123 @@
+PR_Update at 2024-10-04 22:15:43+00:00:
+PR updated at 2024-10-04 22:15:43+00:00
+Notes:
+- Commented:  Hi @RandyMcMillan . Thank you for taking the time to look at my PR. The changes I implemented are actually on `bitcoin-qt` and not on `bitcoin-cli` . I updated the PR description to make it clearer. I believe the issues you describe are not present here, but you are welcome to test them, please let me know if you find anything. 
+- Commented:  Thanks for all the insights. In the first days of the next week I'll try to incorporate the feedback and squash the commits.
+- Commented:  
+Thanks for the feedback and testing. I ' m already working on an update consider this and all feedback received, will update soon.
+
+> @hernanmarino - @rserranon 's suggestion is compelling...
+> 
+> [RandyMcMillan/gui@`612a0c1`](https://github.com/RandyMcMillan/gui/tree/612a0c14173d681a04021581851422ba832236ee)
+> 
+> Applied as a patch on top of this PR: [RandyMcMillan/gui@`612a0c1`/rserranon.patch](https://github.com/RandyMcMillan/gui/blob/612a0c14173d681a04021581851422ba832236ee/rserranon.patch)
+> 
+> I haven't fully tested the patch but works on MacOS x86_64
+
+
+- Commented:  Summary of changes just pushed:
+
+- Changed the regex for a simpler string splitter, while still mantaining the syntax and several argument separators (beyond whitespace) supported by the console. Code now runs 180X faster (thanks @furszy and @andrewtoth for the suggestion)
+- Moved the implementation to a separate method that deals with these console-only commands (@rserranon)Also moved the already implemented "help-console" command handling to this method.
+- Added "help generate" code 
+- Cleaned some code formatting issues according to clang-format ( thanks @jarolrod  for the last two :)  )
+- Squashed all changes on a single commit
+
+- Commented:  > Noticed that we are calling cli-only commands with the "-" prefix. Would be good to follow the same convention here too. The renaming will let us detect them in a simpler manner by checking the first character without requiring to split the string etc.
+
+This seems like something "nice to have" but there are other issues apart from what Pablo mentioned that makes me think that we shouldn´t do that: 
+
+- There are other console-only commands that already existed, like  `help-console`
+- This PR not only introduces the new behaviour for `generate` but also `help generate` as @jarolrod  suggested
+- Future console-only commands that might be introduced later will also require their own `help new_command`
+
+None of this commands could be easily renamed to start with "-" without breaking "protocol"  and backwards compatibility, and if we don't do that, I believe the approach implemented in this PR is good enough. If in any case, if there's further interest to discuss alternatives, perhaps we can take that discussion to a follow-up PR.
+
+
+> Aside from that, now talking about the current changes: What do you think about structuring the changes a bit differently so your patch set is focused to the introduced feature, and we can continue expanding the cli-only options in the future:
+> 
+> ```c++
+> if (IsCliOnlyCommand(executableCommand)) { // --> here we check if string starts with "-". 
+>     // Execute cli-only commands
+>     if (!ExecuteCliCommand(executableCommand, result, etc)) { // --> This function will dispatch cli-only commands ("-generate" should be placed into its own standalone function).
+>          // emit any error here or inside the function
+>          return;
+>     }
+> } else {
+>    // Execute RPC commands
+>    if (!RPCConsole::RPCExecuteCommandLine(m_node, result, executableCommand, nullptr, wallet_model)) {
+>         // etc...
+> }
+> ```
+
+If we abandon the idea of renaming commands to start with "-" the suggested code is very similar to this PR's code, only that the method `ExecuteCliCommand` is called `executeConsoleOnlyCommand`. 
+
+
+- Commented:  > I agree with furszy's idea of introducing the functions `IsCliOnlyCommand ` and `ExecuteCliCommand `, to implement the `generate` cli-only command, for a cleaner implementation and with the advantage of leaving the structure ready for potential expansion of additional cli-only commands.
+
+The provided method `executeConsoleOnlyCommand` is almost identical to the suggested `ExecuteCliCommand` and is also ready for potential future new console only commands, the only difference is that it detects ( like `IsCliOnlyCommand` ) and executes commands in a single method.
+
+- Commented:  > Could this PR be separated in two commits:
+> 
+> * refactoring and introducing the `RPCExecutor::executeConsoleOnlyCommand()` function
+> * actually adding support for the `generate` command`
+> 
+> ?
+
+Yes, will do ASAP.
+- Commented:  As requested by @hebasto i splitted this PR in 2 commits : 
+ad5642ae91beb522b6ae806f28cb015a759d1d19 refactors the code to prepare for the new functionality implemented in the following commit, as well as for future console-only commands to be added.
+
+411b1da407f78f2f973f90d48676ce1ae26734a7  adds the new "generate" command, as well as the updated "help generate"
+- Commented:  > @hernanmarino Are you still working on this PR?
+
+Yes, will update ASAP.
+- Commented:  I changed the code to address @furszy's suggestions. The new commit hashes are:
+[`aa898d6`](https://github.com/bitcoin-core/gui/pull/692/commits/aa898d6a72643542c08f061086ec7eaeb9e16e78) refactors the code to prepare for the new functionality implemented in the following commit, as well as for future console-only commands to be added.
+
+[`1db3da2`](https://github.com/bitcoin-core/gui/pull/692/commits/1db3da2f8b30221f0a94b5881577e2704c1e6da7) adds the new "generate" command, as well as the updated "help generate" 
+- Commented:  Updated with all the changes suggested by @furszy in his latest review.
+- Commented:  > Approach NACK. If we're going to go this route, we can just add back the RPC method... :/
+
+I understand your point of view, but the reasons mentioned in the issues ( https://github.com/bitcoin-core/gui/issues/55 https://github.com/bitcoin/bitcoin/issues/16000 ), some of them mentioned by Pablo,  encouraged me to work on this. Also, it evolved to (a litlle bit) more than bringing back the RPC call.
+- Commented:  @maflcko @jonatack @Sjors since you opened or ACK'ed the original issues I kindly request your review on this PR.
+- Commented:  Rebased on top of master to fix CI errors.
+- Review (COMMENTED) at 2022-12-31 16:01:29+00:00:
+  
+- Review (COMMENTED) at 2023-01-19 03:04:32+00:00:
+  
+- Review (COMMENTED) at 2023-01-25 18:22:31+00:00:
+  
+- Review (COMMENTED) at 2023-03-01 18:37:39+00:00:
+  
+- Review (COMMENTED) at 2023-03-01 18:40:38+00:00:
+  
+- Review (COMMENTED) at 2023-03-01 18:41:46+00:00:
+  
+- Review (COMMENTED) at 2023-06-15 16:04:24+00:00:
+  
+- Review (COMMENTED) at 2023-06-15 17:05:01+00:00:
+  
+- Review (COMMENTED) at 2023-06-15 17:29:56+00:00:
+  
+- Review (COMMENTED) at 2023-06-15 17:33:01+00:00:
+  
+- Review (COMMENTED) at 2023-06-15 17:50:38+00:00:
+  
+- Review (COMMENTED) at 2023-06-16 01:35:44+00:00:
+  
+- Review (COMMENTED) at 2023-06-16 01:36:46+00:00:
+  
+- Review (COMMENTED) at 2023-08-28 19:40:31+00:00:
+  
+- Review (COMMENTED) at 2023-08-28 19:41:37+00:00:
+  
+- Review (COMMENTED) at 2023-08-29 01:09:41+00:00:
+  
+- Review (COMMENTED) at 2023-09-04 21:28:44+00:00:
+  
+- Review (COMMENTED) at 2023-09-05 04:02:25+00:00:
+  
+- Review (COMMENTED) at 2024-01-08 22:55:59+00:00:
+  
+
