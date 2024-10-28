@@ -1,0 +1,7 @@
+Issue_Update at 2024-10-28 23:58:30+00:00:
+Issue updated at 2024-10-28 23:58:30+00:00
+Notes:
+- Commented:  > There'd be [#27596 (comment)](https://github.com/bitcoin/bitcoin/pull/27596#discussion_r1344713537) if someone wants to tackle it.
+
+Done, reviews welcome https://github.com/bitcoin/bitcoin/pull/29394
+
