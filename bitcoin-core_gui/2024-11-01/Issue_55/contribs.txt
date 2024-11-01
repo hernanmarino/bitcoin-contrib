@@ -1,0 +1,5 @@
+Issue_Update at 2024-11-01 17:11:11+00:00:
+Issue updated at 2024-11-01 17:11:11+00:00
+Notes:
+- Commented:  Hi, I made a PR for this functionality reviewers are welcome to PR https://github.com/bitcoin-core/gui/pull/692 
+
