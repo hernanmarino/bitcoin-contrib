@@ -1,0 +1,29 @@
+PR_Update at 2024-11-11 05:00:29+00:00:
+PR updated at 2024-11-11 05:00:29+00:00
+Notes:
+- Review (COMMENTED) at 2023-02-06 20:04:47+00:00:
+  tested ACK. Changes provide more feedback to the user on error messages. Works as intended.
+- Review (COMMENTED) at 2023-03-01 16:47:12+00:00:
+  Light code review ACK 86c0442da27ed92855f9722eb10d94e72b197f2d Also tested ACK the use cases refered by author [here](https://github.com/bitcoin/bitcoin/pull/26990#issuecomment-1446919139) 
+The only thing i suggest changing is giving a more descriptive error on the following situation :
+
+```
+$ bitcoin-cli -regtest -generate 1 -rpcwallet=tst2
+error: Error: this is not a valid cli-command argument "-rpcwallet=tst2", please check the syntax of the "-generate" command.
+```
+I would only show that error when the extra / invalid parameter does not start with "-" . When starting with "-" , perhaps an error similar to the following might be more useful :
+```
+$ bitcoin-cli -regtest -generate 1 -rpcwallet=tst2
+error: Error: this is not a valid cli-command argument "-rpcwallet=tst2", if that is a valid option you might try passing it before -generate
+```
+This is just a sample text for the error, it might apply to other options requiring parameters and not only to -generate.
+
+- Review (APPROVED) at 2023-03-02 15:06:59+00:00:
+  re ACK 7f5fd1e6999b955dbb0b382bbfdce90a02e1cd8e Looks good to me now
+- Review (APPROVED) at 2023-03-16 01:48:20+00:00:
+  ACK a870f5affcfb85f91afe989db0824313985158d8
+- Review (COMMENTED) at 2024-02-13 22:14:26+00:00:
+  re ACK fa48d460334beef43fa73455aa9e30971d33c1b2
+Just a nit (only if you update) : your second commit title seems to suggest that it's gui related, instead of cli.
+Also, and although not invalidating for me , I think that @jonatack 's suggestions are worth following.
+
