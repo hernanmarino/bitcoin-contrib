@@ -1,0 +1,9 @@
+PR_Update at 2024-11-19 17:17:28+00:00:
+PR updated at 2024-11-19 17:17:28+00:00
+Notes:
+- Commented:  This is a nice idea. I always have a conflict between submitting this simple typo-fixing PRs and ignoring them. This should be done often, for evey release .
+> We probably don't want too many pull requests that just fix a typo. At the same time, if we never fix them people will start ignore the linter all-together. So my suggestion would be to do this before branch-off.
+
+- Review (APPROVED) at 2023-10-16 14:36:14+00:00:
+  ACK 650e22d65bd3504f51547f4d70d6d74101ff602f
+
