@@ -1,0 +1,43 @@
+PR_Update at 2024-11-30 11:55:31+00:00:
+PR updated at 2024-11-30 11:55:31+00:00
+Notes:
+- Commented:  > Thanks for testing! @hernanmarino could you post the warnings, and maybe post your compiler version? I don't think I'm seeing these and I don't think they are happening on CI because those builds treat warnings as errors. I'd like to fix this if possible.
+
+Yes, this is one of them (there are a few more , all similar)
+
+```
+ In file included from ./interfaces/wallet.h:15,
+                 from wallet/interfaces.cpp:5:
+./util/result.h: In instantiation of ‘util::Result<OT, OF>&& util::Result<T, F>::operator<<(util::Result<OT, OF>&&) [with OT = std::unique_ptr<interfaces::Wallet>; OF = void; T = std::unique_ptr<interfaces::Wallet>; F = void]’:
+
+./util/result.h:187:15:   required from ‘void util::Result<T, F>::MoveConstruct(util::Result<OT, OF>&) [with OT = std::unique_ptr<interfaces::Wallet>; OF = void; T = std::unique_ptr<interfaces::Wallet>; F = void]’
+
+./util/result.h:202:51:   required from ‘util::Result<T, F>::Result(util::Result<OT, OF>&&) [with OT = std::unique_ptr<interfaces::Wallet>; OF = void; T = std::unique_ptr<interfaces::Wallet>; F = void]’
+
+wallet/interfaces.cpp:580:16:   required from here
+
+./util/result.h:218:32: warning: missing initializer for member ‘util::detail::ErrorInfo<void>::failure’ [-Wmissing-field-initializers]
+  218 |             this->m_info.reset(new detail::ErrorInfo<F>{.errors = std::move(other.m_info->errors),
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  219 |                                                         .warnings = std::move(other.m_info->warnings)});
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+```
+
+I'm using  gcc  11.2.0 . If you need them all, just let me know
+
+
+
+
+
+- Review (COMMENTED) at 2022-08-17 18:22:16+00:00:
+  
+- Review (COMMENTED) at 2022-08-18 04:38:22+00:00:
+  Tested ACK and Code review ACK. I got a few warnings while compiling though (missing-field-initializers)
+- Review (COMMENTED) at 2022-08-19 16:59:37+00:00:
+  
+- Review (APPROVED) at 2023-05-11 16:42:27+00:00:
+  re ACK 28a954c7034077ac3a45083dd5e2b5cdb4d4cdde
+- Review (APPROVED) at 2024-02-05 16:41:28+00:00:
+  re ack f822ac9a24d684937f1258da89812e99c4b205ba 
+
